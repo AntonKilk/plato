@@ -1,16 +1,38 @@
 ---
+import MainLayout from '../layouts/MainLayout.astro';
+import Navigation from '../components/Navigation';
+import CaveIntro from '../components/CaveIntro';
+import Section from '../components/Section';
+import About from '../components/About';
+import Events from '../components/Events';
+import Footer from '../components/Footer';
 
+import '../styles/global.css';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Платоновский клуб — Путь от теней к истине">
+  <div id="home" class="home-section">
+    <Navigation client:load />
+    <CaveIntro client:load />
+  </div>
+  
+  <main>
+    <Section id="about" title="О клубе" subtitle="Философское сообщество, объединенное стремлением к познанию истины">
+      <About client:visible />
+    </Section>
+    
+    <Section id="events" title="События" subtitle="Встречи, дискуссии и лекции нашего философского клуба" light={true}>
+      <Events client:visible />
+    </Section>
+  </main>
+  
+  <Footer client:load />
+</MainLayout>
+
+<style>
+  .home-section {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+</style>
