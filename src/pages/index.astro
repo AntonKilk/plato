@@ -3,7 +3,6 @@ import MainLayout from '../layouts/MainLayout.astro';
 import Navigation from '../components/Navigation';
 import CaveIntro from '../components/CaveIntro';
 import Section from '../components/Section';
-import About from '../components/About';
 import Events from '../components/Events';
 import Footer from '../components/Footer';
 
@@ -17,10 +16,6 @@ import '../styles/global.css';
   </div>
   
   <main>
-    <Section id="about" title="О клубе" subtitle="Философское сообщество, объединенное стремлением к познанию истины">
-      <About client:visible />
-    </Section>
-    
     <Section id="events" title="События" subtitle="Встречи, дискуссии и лекции нашего философского клуба" light={true}>
       <Events client:visible />
     </Section>
