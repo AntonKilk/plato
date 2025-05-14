@@ -16,7 +16,7 @@ export default function Events() {
       description:
         "Первая открытая встреча проекта ACADEMIA PLATONICA (Tallinn)",
       link: "https://fienta.com/ru/platon-now-iskusstvo-myslit-svobodno",
-      image: "public/events_Platon_NOW.png",
+      image: "/events_Platon_NOW.png",
     },
     {
       title: "Проблемы сознания",
