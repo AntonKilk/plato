@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="footer-logo">
           <span className="footer-phi">Φ</span>
           <div className="footer-logo-text">
-            <span className="logo-name">Платоновский клуб</span>
+            <span className="logo-name">ACADEMIA PLATONICA</span>
             <span className="logo-tagline">Путь от теней к истине</span>
           </div>
         </div>
