@@ -19,9 +19,11 @@ export default function Events() {
       image: "/events_Platon_NOW.png",
     },
     {
-      title: "Проблемы сознания",
+      title: "СОЗНАНИЕ это ИЛЛЮЗИЯ?",
       date: "29 мая 2025",
-      description: "Беседа с учёным-когнитивистом из университета Турку",
+      description: "Открытая дискуссия проекта ACADEMIA PLATONICA (Tallinn)",
+      link: "https://fienta.com/ru/soznanie-eto-illyuziya",
+      image: "/events_Sozn.jpg",
     },
   ];
 
