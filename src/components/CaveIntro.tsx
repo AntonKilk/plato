@@ -29,7 +29,15 @@ export default function CaveIntro() {
   return (
     <div ref={caveRef} className="cave-intro">
       <div className="cave-content">
-        <h1 className="title fade-in">Academia Platonica</h1>
+        <div className="logo-container fade-in">
+          <img
+            src="/logo.png"
+            alt="Academia Platonica Logo"
+            className="logo-image"
+            width="800"
+            height="500"
+          />
+        </div>
         <p className="subtitle fade-in">Путь от теней к истине</p>
         <div className="quote-container fade-in">
           <blockquote>
