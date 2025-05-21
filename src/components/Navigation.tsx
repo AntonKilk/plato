@@ -34,6 +34,7 @@ export default function Navigation() {
         <span className="logo-text">Academia Platonica</span>
       </a>
       <div className="nav-links">
+        <NavLink href="#about" title="О нас" />
         <NavLink href="#events" title="События" />
       </div>
     </nav>

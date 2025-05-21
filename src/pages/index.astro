@@ -7,6 +7,7 @@ import Events from '../components/Events';
 import Footer from '../components/Footer';
 
 import '../styles/global.css';
+import About from '../components/About';
 ---
 
 <MainLayout title="Academia Platonica">
@@ -16,11 +17,13 @@ import '../styles/global.css';
   </div>
   
   <main>
+    <Section id="about" title="О школе" subtitle="Academia Platonica — площадка для живой мысли. Мы изучаем философию, историю науки и античную культуру, чтобы лучше понимать себя и мир сегодня">
+      <About />
+    </Section>
     <Section id="events" title="События" subtitle="Встречи, дискуссии и лекции нашего философского клуба" light={true}>
-      <Events client:visible />
+      <Events />
     </Section>
   </main>
-  
   <Footer client:load />
 </MainLayout>
 

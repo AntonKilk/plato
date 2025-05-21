@@ -415,14 +415,14 @@ blockquote footer {
   font-weight: 600;
 }
 
-.principles {
-  margin-top: 3rem;
-}
-
-.principles h3 {
+.about-right h3 {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
   color: var(--color-gold);
+}
+
+.principles {
+  margin-top: 3rem;
 }
 
 .principles ul {
