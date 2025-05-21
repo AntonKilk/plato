@@ -410,13 +410,9 @@ blockquote footer {
   line-height: 1.7;
 }
 
-.about-right p strong {
-  color: var(--color-gold);
-  font-weight: 600;
-}
-
 .about-right h3 {
   font-size: 1.5rem;
+  margin-top: -1rem;
   margin-bottom: 1.5rem;
   color: var(--color-gold);
 }
@@ -626,42 +622,6 @@ blockquote footer {
 
 .philosophy-card p {
   line-height: 1.6;
-}
-
-.tetractys {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 3rem auto;
-  max-width: 200px;
-}
-
-.tetractys-row {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-.dot {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: var(--color-gold);
-  margin: 0 0.5rem;
-  position: relative;
-}
-
-.dot::before {
-  content: "";
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  background: rgba(212, 175, 55, 0.3);
-  border-radius: 50%;
-  z-index: -1;
-  animation: pulse 4s infinite;
 }
 
 .philosophy-quote {
