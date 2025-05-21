@@ -55,20 +55,7 @@ export default function CaveIntro() {
             height="500"
           />
         </div>
-        <p className="subtitle fade-in">Путь от теней к истине</p>
-        <div className="quote-container fade-in">
-          <blockquote>
-            «Представь, что люди находятся в подземном жилище наподобие
-            пещеры...»
-            <footer>
-              — Платон, <cite>Государство, Книга VII</cite>
-            </footer>
-          </blockquote>
-        </div>
-        <div className="scroll-indicator fade-in">
-          <p>Прокрутите вниз, чтобы выйти из пещеры</p>
-          <div className="arrow">↓</div>
-        </div>
+        <p className="subtitle fade-in">Пространство живого мышления</p>
       </div>
 
       <div className="shadows-container">

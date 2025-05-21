@@ -1,7 +1,68 @@
+import { useState, useEffect } from "react";
 import EventCard from "./EventCard";
-import { eventsList } from "../data/events";
+import type { EventCardProps } from "./EventCard";
+
+const organizerId = import.meta.env.FIENTA_ORGANIZER_ID;
+const fientaUrl = import.meta.env.FIENTA_URL;
+if (!organizerId) {
+  console.error(
+    "FIENTA_ORGANIZER_ID is not defined in the environment variables."
+  );
+}
 
 export default function Events() {
+  const [events, setEvents] = useState<EventCardProps[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const url = `${fientaUrl}?organizer=${organizerId}`;
+        setLoading(true);
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`Failed to fetch events: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        if (!Array.isArray(data.events)) {
+          console.error("API did not return an array:", data);
+          setError("Received invalid data format from the events API.");
+          setLoading(false);
+          return;
+        }
+
+        const formattedEvents = data.events.map((event: any) => ({
+          title: event.title,
+          starts_at: event.starts_at
+            ? new Date(event.starts_at).toLocaleDateString("ru-RU", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+              })
+            : "Date TBA",
+          address: event.address || "",
+
+          url: event.url || "",
+          image_url: event.image_url || "",
+        }));
+
+        setEvents(formattedEvents);
+      } catch (err) {
+        console.error("Error fetching events:", err);
+        setError("Failed to load events. Please try again later.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchEvents();
+  }, []);
+
   return (
     <div className="events-container">
       <div className="events-intro">
@@ -11,17 +72,19 @@ export default function Events() {
         </p>
       </div>
 
-      <div className="events-grid">
-        {eventsList.map((eventProps, index) => (
-          <EventCard key={index} {...eventProps} />
-        ))}
-      </div>
+      {loading && <div className="loading">Загружаю мероприятия...</div>}
 
-      {/* <div className="events-cta animate-on-scroll">
-        <a href="#contact" className="cta-button">
-          Все события
-        </a>
-      </div> */}
+      {error && <div className="error-message">{error}</div>}
+
+      <div className="events-grid">
+        {events.length > 0 ? (
+          events.map((eventProps, index) => (
+            <EventCard key={index} {...eventProps} />
+          ))
+        ) : !loading && !error ? (
+          <div className="no-events">Ни одного мероприятия не найдено</div>
+        ) : null}
+      </div>
     </div>
   );
 }
