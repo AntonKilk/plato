@@ -12,8 +12,8 @@ export default function Events() {
       </div>
 
       <div className="events-grid">
-        {eventsList.map((event, index) => (
-          <EventCard key={index} {...event} />
+        {eventsList.map((eventProps, index) => (
+          <EventCard key={index} {...eventProps} />
         ))}
       </div>
 
