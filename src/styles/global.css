@@ -395,9 +395,9 @@ blockquote footer {
 }
 
 .about-image {
-  height: 500px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500' viewBox='0 0 500 500'%3E%3Crect width='500' height='500' fill='%23e0d9d1'/%3E%3Cpath d='M250,100 C175,100 100,150 100,250 C100,350 175,400 250,400 C325,400 400,350 400,250 C400,150 325,100 250,100 Z M250,380 C185,380 120,340 120,250 C120,160 185,120 250,120 C315,120 380,160 380,250 C380,340 315,380 250,380 Z' fill='%23d4af37'/%3E%3Ccircle cx='250' cy='250' r='70' fill='%230a1929'/%3E%3Ccircle cx='250' cy='250' r='60' fill='%23d4af37'/%3E%3Cpath d='M250,190 L250,310 M190,250 L310,250' stroke='%230a1929' stroke-width='5'/%3E%3C/svg%3E");
-  background-size: contain;
+  height: 320px;
+  background-image: url("/about.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 5px;
