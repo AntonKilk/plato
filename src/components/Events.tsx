@@ -14,6 +14,7 @@ export default function Events() {
   const [events, setEvents] = useState<EventCardProps[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [showPastEvents, setShowPastEvents] = useState(false);
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -84,6 +85,38 @@ export default function Events() {
         ) : !loading && !error ? (
           <div className="no-events">Ни одного мероприятия не найдено</div>
         ) : null}
+      </div>
+
+      <div className="past-events-section">
+        <button
+          className="past-event-button"
+          onClick={() => setShowPastEvents(!showPastEvents)}
+          style={{ cursor: "pointer", margin: "20px auto", display: "block" }}
+        >
+          {showPastEvents
+            ? "Скрыть прошедшие события"
+            : "Показать прошедшие события"}
+        </button>
+
+        {showPastEvents && (
+          <div className="past-events-content">
+            <div className="past-events-grid">
+              <div className="past-event-video">
+                <h4>Платон: Философия, изменившая мир</h4>
+                <div className="video-embed">
+                  <iframe
+                    width="100%"
+                    min-height="200"
+                    src="https://www.youtube.com/embed/5Be08G0hlBA?start=4588"
+                    title="Платон: Философия, изменившая мир"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

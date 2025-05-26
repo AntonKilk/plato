@@ -254,6 +254,91 @@ blockquote footer {
   }
 }
 
+/* Past Events Grid - Responsive Layout */
+.past-events-content {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.past-events-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+  /* Default: 6 columns for very large screens (1400px+) */
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.past-event-video {
+  background: rgba(245, 243, 239, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.past-event-video:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.past-event-video h4 {
+  padding: 1rem 1rem 0.5rem;
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--color-gold);
+  font-family: var(--font-display);
+}
+
+.video-embed {
+  padding: 1rem 1rem 1rem;
+}
+
+.video-embed iframe {
+  border-radius: 4px;
+  width: 100%;
+  height: 200px;
+}
+
+/* Responsive breakpoints */
+
+/* Medium screens: 3 columns (768px - 1023px) */
+@media (max-width: 1023px) {
+  .past-events-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Small screens: 2 columns (480px - 767px) */
+@media (max-width: 767px) {
+  .past-events-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .video-embed iframe {
+    height: 150px;
+  }
+}
+
+/* Very small screens: 1 column (below 480px) */
+@media (max-width: 479px) {
+  .past-events-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .past-event-video h4 {
+    font-size: 1rem;
+    padding: 0.8rem 0.8rem 0.4rem;
+  }
+
+  .video-embed {
+    padding: 0 0.8rem 0.8rem;
+  }
+
+  .video-embed iframe {
+    height: 180px;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -602,6 +687,26 @@ blockquote footer {
   background: transparent;
   color: var(--color-gold);
   box-shadow: inset 0 0 0 2px var(--color-gold);
+}
+
+.past-event-button {
+  bottom: 16px;
+  left: 16px;
+  background: transparent;
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  padding: 0.5rem 1.2rem;
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.past-event-button:hover {
+  background: var(--color-gold);
+  color: var(--color-dark);
 }
 
 /* Loading and error states for events */
