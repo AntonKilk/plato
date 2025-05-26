@@ -107,7 +107,7 @@ export default function Events() {
                   <iframe
                     width="100%"
                     min-height="200"
-                    src="https://www.youtube.com/embed/5Be08G0hlBA?start=4588"
+                    src="https://www.youtube.com/embed/5Be08G0hlBA"
                     title="Платон: Философия, изменившая мир"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
