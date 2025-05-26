@@ -25,6 +25,15 @@ export default function Footer() {
                   Facebook
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/@Academia_Platonica"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  YouTube
+                </a>
+              </li>
             </ul>
           </div>
         </div>

@@ -903,7 +903,7 @@ blockquote footer {
   position: fixed;
   left: 0;
   top: 30%;
-  background-color: #ff0066; /* The pink color from your image */
+  background-color: #ff0066;
   width: 60px;
   height: 60px;
   display: flex;
@@ -925,6 +925,35 @@ blockquote footer {
 .facebook-icon {
   width: 30px;
   height: 30px;
+  fill: white;
+}
+
+.youtube-tab {
+  position: fixed;
+  left: 0;
+  top: 40%;
+  background-color: #ff0000;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.youtube-tab:hover {
+  width: 65px;
+  background-color: #cc0000;
+}
+
+.youtube-icon {
+  width: 32px;
+  height: 32px;
   fill: white;
 }
 
@@ -1048,5 +1077,3 @@ blockquote footer {
     }
   }
 }
-
-/* Footer */
