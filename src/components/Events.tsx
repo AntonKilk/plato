@@ -114,6 +114,19 @@ export default function Events() {
                   ></iframe>
                 </div>
               </div>
+              <div className="past-event-video">
+                <h4>Сознание: Последняя великая загадка науки</h4>
+                <div className="video-embed">
+                  <iframe
+                    width="100%"
+                    min-height="200"
+                    src="https://www.youtube.com/embed/FCVntA90Cv4"
+                    title="Сознание: Последняя великая загадка науки"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
             </div>
           </div>
         )}
