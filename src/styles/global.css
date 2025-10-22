@@ -744,6 +744,17 @@ blockquote footer {
   grid-column: 1 / -1;
 }
 
+.no-events a {
+  color: #9bb2c7;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.no-events a:hover {
+  color: var(--color-gold);
+  text-decoration: none;
+}
+
 /* Philosophy section styles */
 .philosophy-container {
   width: 100%;

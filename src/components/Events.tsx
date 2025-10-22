@@ -4,6 +4,7 @@ import type { EventCardProps } from "./EventCard";
 
 const organizerId = import.meta.env.FIENTA_ORGANIZER_ID;
 const fientaUrl = import.meta.env.FIENTA_URL;
+
 if (!organizerId) {
   console.error(
     "FIENTA_ORGANIZER_ID is not defined in the environment variables."
@@ -83,8 +84,7 @@ export default function Events() {
           ))
         ) : !loading && !error ? (
           <div className="no-events">
-            Пока нет открытых мероприятий. Возможно, это подходящее время для
-            созерцания
+            Наши регулярные встречи нашего формата «Классы» проводится раз в две недели. Присоединяйтесь к нашему <a href="https://t.me/AcademiaPlatonica" target="_blank" rel="noopener noreferrer">Telegram-каналу</a>, где публикуются все оперативные обновления и материалы для будущих встреч или пишите на почту <a href="mailto:academia@platonica.pro">academia@platonica.pro</a>.
           </div>
         ) : null}
       </div>
