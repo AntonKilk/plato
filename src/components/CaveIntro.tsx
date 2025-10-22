@@ -28,6 +28,7 @@ export default function CaveIntro() {
 
   return (
     <div ref={caveRef} className="cave-intro">
+      <div className="social-networks">
       {/* Facebook Link Tab */}
       <a
         href="https://www.facebook.com/profile.php?id=61574957652748"
@@ -60,6 +61,23 @@ export default function CaveIntro() {
           <path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" />
         </svg>
       </a>
+      {/* Telegram Link Tab */}
+       <a
+        href="https://t.me/AcademiaPlatonica"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="telegram-tab"
+        aria-label="Join our Telegram channel"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 496 512"
+          className="telegram-icon"
+        >
+          <path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z" />
+        </svg>
+      </a>
+      </div>
       <div className="cave-content">
         <div className="logo-container fade-in">
           <img
