@@ -21,7 +21,7 @@
     },
     "about": {
         "missionTitle": "Meie eesmärk",
-        "missionText": "Selgitada maailma keerukust lihtsas keeles ning anda kõigile võimalus proovida ennast filosoofi rollis, sest filosoofia on kunst olla õnnelik.",
+        "missionText": "Selgitada maailma keerukust lihtsas keeles ning anda kõigile võimalus proovida olla filosoofi rollis, sest filosoofia on kunst olla õnnelik.",
         "whatWeDoTitle": "Mida me teeme",
         "items": {
             "lectures": {
@@ -34,11 +34,11 @@
             },
             "classes": {
                 "title": "Klassid",
-                "text": "Praktilised tunnid ja allikate lugemine"
+                "text": "Praktilised tunnid ja kirjanduse lugemine"
             },
             "labs": {
-                "title": "Laborid",
-                "text": "Eksperimentaalsed formaadid, kus osalejad proovivad filosoofiat 'tegevuses'"
+                "title": "Töötoad",
+                "text": "Eksperimentaalsed seminarid, kus osalejad proovivad filosoofiat 'tegevuses'"
             }
         }
     },
