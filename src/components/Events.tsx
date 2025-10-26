@@ -41,7 +41,7 @@ export default function Events() {
         const locale = lang === 'et' ? 'et-EE' : 'ru-RU';
         const formattedEvents = data.events.map((event: any) => {
           const starts_at = event.starts_at
-            ? new Date(event.starts_at).toLocaleDateString(locale, {
+            ? new Date(event.starts_at).toLocaleDateString('et-EE', {
                 day: 'numeric',
                 month: 'long',
                 year: 'numeric',

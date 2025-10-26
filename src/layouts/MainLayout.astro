@@ -21,24 +21,6 @@ const { title, description = "Philosophy Club inspired by Plato's cave allegory"
   </head>
   <body>
     <slot />
-    <script>
-      // Animation for scroll effects
-      document.addEventListener('DOMContentLoaded', () => {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-            }
-          });
-        }, { 
-          threshold: 0.1 
-        });
-
-        document.querySelectorAll('.animate-on-scroll').forEach((element) => {
-          observer.observe(element);
-        });
-      });
-    </script>
   </body>
 </html>
 

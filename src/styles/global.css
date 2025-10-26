@@ -310,6 +310,7 @@ blockquote footer {
 }
 
 .past-event-video {
+  min-width: 300px;
   background: rgba(245, 243, 239, 0.05);
   border-radius: 8px;
   overflow: hidden;
@@ -346,6 +347,7 @@ blockquote footer {
   .past-events-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+ 
 }
 
 /* Small screens: 2 columns (480px - 767px) */
