@@ -84,6 +84,48 @@
   width: 100%;
 }
 
+/* Language Switcher */
+.lang-switcher {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  margin-right: 2.5rem;
+}
+
+.lang-btn {
+  background: rgba(245, 243, 239, 0.05);
+  border: 1px solid var(--color-accent);
+  color: var(--color-light);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  padding: 0.35rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  line-height: 1;
+}
+
+.lang-btn:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.lang-btn.active,
+.lang-btn[aria-pressed='true'] {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-dark);
+  box-shadow: 0 0 0 1px var(--color-gold), 0 2px 6px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+  .lang-switcher {
+    margin-left: 0;
+    order: 3;
+  }
+}
+
 /* Cave intro section */
 .cave-intro {
   height: 100vh;

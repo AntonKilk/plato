@@ -1,5 +1,8 @@
+import { useT } from "../i18n/t";
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const t = useT();
 
   return (
     <footer className="footer">
@@ -8,13 +11,13 @@ export default function Footer() {
           <span className="footer-phi">Φ</span>
           <div className="footer-logo-text">
             <span className="logo-name">ACADEMIA PLATONICA</span>
-            <span className="logo-tagline">Путь от теней к истине</span>
+            <span className="logo-tagline">{t("footer.tagline")}</span>
           </div>
         </div>
 
         <div className="footer-links">
           <div className="footer-links-column">
-            <h4>Социальные сети</h4>
+            <h4>{t("footer.socialTitle")}</h4>
             <ul>
               <li>
                 <a
@@ -40,7 +43,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© {currentYear} ACADEMIA PLATONICA MTÜ</p>
+        <p>{t("footer.copyright", { year: currentYear })}</p>
       </div>
     </footer>
   );

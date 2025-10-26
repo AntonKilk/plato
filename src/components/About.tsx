@@ -1,4 +1,7 @@
+import { useT } from "../i18n/t";
+
 export default function About() {
+  const t = useT();
   return (
     <div className="about-content">
       <div className="about-left">
@@ -6,45 +9,38 @@ export default function About() {
       </div>
       <div className="about-right">
         <div className="animate-on-scroll">
-          <h3>Наша задача</h3>
-          <p>
-            Рассказать простым языком о сложности мира и дать каждому
-            возможность попробовать себя в роли философа, потому что философия —
-            это искусство быть счастливым.
-          </p>
+          <h3>{t("about.missionTitle")}</h3>
+          <p>{t("about.missionText")}</p>
         </div>
         <div className="principles animate-on-scroll">
-          <h3>Что мы делаем</h3>
+          <h3>{t("about.whatWeDoTitle")}</h3>
           <ul>
             <li>
               <span className="principle-icon">Ω</span>
               <div>
-                <h4>Лекции</h4>
-                <p>Краткое и понятное введение в сложные темы</p>
+                <h4>{t("about.items.lectures.title")}</h4>
+                <p>{t("about.items.lectures.text")}</p>
               </div>
             </li>
             <li>
               <span className="principle-icon">δ</span>
               <div>
-                <h4>Междисциплинарные дискуссии</h4>
-                <p>Связываем идеи философии, науки и искусства</p>
+                <h4>{t("about.items.discussions.title")}</h4>
+                <p>{t("about.items.discussions.text")}</p>
               </div>
             </li>
             <li>
               <span className="principle-icon">α</span>
               <div>
-                <h4>Классы</h4>
-                <p>Практические занятия и чтение источников</p>
+                <h4>{t("about.items.classes.title")}</h4>
+                <p>{t("about.items.classes.text")}</p>
               </div>
             </li>
             <li>
               <span className="principle-icon">π</span>
               <div>
-                <h4>Лаборатории</h4>
-                <p>
-                  Экспериментальные форматы, где участники пробуют философию «в
-                  действии
-                </p>
+                <h4>{t("about.items.labs.title")}</h4>
+                <p>{t("about.items.labs.text")}</p>
               </div>
             </li>
           </ul>

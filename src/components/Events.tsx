@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import EventCard from "./EventCard";
 import type { EventCardProps } from "./EventCard";
+import { useI18n, useT } from "../i18n/t";
 
 const organizerId = import.meta.env.FIENTA_ORGANIZER_ID;
 const fientaUrl = import.meta.env.FIENTA_URL;
@@ -15,6 +16,8 @@ export default function Events() {
   const [events, setEvents] = useState<EventCardProps[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const { lang } = useI18n();
+  const t = useT();
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -35,22 +38,25 @@ export default function Events() {
           return;
         }
 
-        const formattedEvents = data.events.map((event: any) => ({
-          title: event.title,
-          starts_at: event.starts_at
-            ? new Date(event.starts_at).toLocaleDateString("ru-RU", {
-                day: "numeric",
-                month: "long",
-                year: "numeric",
-                hour: "2-digit",
-                minute: "2-digit",
+        const locale = lang === 'et' ? 'et-EE' : 'ru-RU';
+        const formattedEvents = data.events.map((event: any) => {
+          const starts_at = event.starts_at
+            ? new Date(event.starts_at).toLocaleDateString(locale, {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
               })
-            : "Date TBA",
-          address: event.address || "",
-
-          url: event.url || "",
-          image_url: event.image_url || "",
-        }));
+            : 'Date TBA';
+          return {
+            title: event.title,
+            starts_at,
+            address: event.address || '',
+            url: event.url || '',
+            image_url: event.image_url || ''
+          };
+        });
 
         setEvents(formattedEvents);
       } catch (err) {
@@ -62,20 +68,17 @@ export default function Events() {
     };
 
     fetchEvents();
-  }, []);
+  }, [lang]);
 
   return (
     <div className="events-container">
       <div className="events-intro">
-        <p>
-          Присоединяйтесь к нашим встречам, семинарам и дискуссиям, где мы
-          вместе исследуем глубины философской мысли.
-        </p>
+        <p>{t("events.intro")}</p>
       </div>
 
-      {loading && <div className="loading">Загружаю мероприятия...</div>}
+  {loading && <div className="loading">{t("events.loading")}</div>}
 
-      {error && <div className="error-message">{error}</div>}
+  {error && <div className="error-message">{t("events.error")}</div>}
 
       <div className="events-grid">
         {events.length > 0 ? (
@@ -83,38 +86,46 @@ export default function Events() {
             <EventCard key={index} {...eventProps} />
           ))
         ) : !loading && !error ? (
-          <div className="no-events">
-            Наши регулярные встречи нашего формата «Классы» проводится раз в две недели. Присоединяйтесь к нашему <a href="https://t.me/AcademiaPlatonica" target="_blank" rel="noopener noreferrer">Telegram-каналу</a>, где публикуются все оперативные обновления и материалы для будущих встреч или пишите на почту <a href="mailto:academia@platonica.pro">academia@platonica.pro</a>.
-          </div>
+          <div
+            className="no-events"
+            dangerouslySetInnerHTML={{
+              __html: t("events.noEvents", {
+                telegram:
+                  `<a href="https://t.me/AcademiaPlatonica" target="_blank" rel="noopener noreferrer">${t("events.telegram")}</a>`,
+                email:
+                  '<a href="mailto:academia@platonica.pro">academia@platonica.pro</a>'
+              })
+            }}
+          />
         ) : null}
       </div>
 
       <div className="past-events-section">
-        <h3>Прошедшие события</h3>
+        <h3>{t("events.pastEvents")}</h3>
 
         <div className="past-events-content">
           <div className="past-events-grid">
             <div className="past-event-video">
-              <h4>Платон: Философия, изменившая мир</h4>
+              <h4>{t("events.videos.plato")}</h4>
               <div className="video-embed">
                 <iframe
                   width="100%"
                   min-height="200"
                   src="https://www.youtube.com/embed/5Be08G0hlBA"
-                  title="Платон: Философия, изменившая мир"
+                  title={t("events.videos.plato")}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
               </div>
             </div>
             <div className="past-event-video">
-              <h4>Сознание: Последняя великая загадка науки</h4>
+              <h4>{t("events.videos.consciousness")}</h4>
               <div className="video-embed">
                 <iframe
                   width="100%"
                   min-height="200"
                   src="https://www.youtube.com/embed/FCVntA90Cv4"
-                  title="Сознание: Последняя великая загадка науки"
+                  title={t("events.videos.consciousness")}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>

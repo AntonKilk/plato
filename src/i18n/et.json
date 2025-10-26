@@ -1,0 +1,63 @@
+{
+    "site": {
+        "name": "Academia Platonica"
+    },
+    "nav": {
+        "about": "Meist",
+        "events": "Sündmused"
+    },
+    "home": {
+        "tagline": "Elava mõtlemise ruum"
+    },
+    "sections": {
+        "about": {
+            "title": "Koolist",
+            "subtitle": "Academia Platonica on elava mõtte koht. Uurime filosoofiat, teaduse ajalugu ja antiikkultuuri, et paremini mõista ennast ja maailma täna"
+        },
+        "events": {
+            "title": "Sündmused",
+            "subtitle": "Kohtumised, arutelud ja loengud meie filosoofiaklubis"
+        }
+    },
+    "about": {
+        "missionTitle": "Meie eesmärk",
+        "missionText": "Selgitada maailma keerukust lihtsas keeles ning anda kõigile võimalus proovida ennast filosoofi rollis, sest filosoofia on kunst olla õnnelik.",
+        "whatWeDoTitle": "Mida me teeme",
+        "items": {
+            "lectures": {
+                "title": "Loengud",
+                "text": "Lühike ja arusaadav sissejuhatus keerukatesse teemadesse"
+            },
+            "discussions": {
+                "title": "Interdistsiplinaarsed arutelud",
+                "text": "Seome filosoofia, teaduse ja kunsti ideid"
+            },
+            "classes": {
+                "title": "Klassid",
+                "text": "Praktilised tunnid ja allikate lugemine"
+            },
+            "labs": {
+                "title": "Laborid",
+                "text": "Eksperimentaalsed formaadid, kus osalejad proovivad filosoofiat 'tegevuses'"
+            }
+        }
+    },
+    "events": {
+        "intro": "Tulge meie kohtumistele, seminaridele ja aruteludele – uurime koos filosoofilise mõtte sügavusi.",
+        "buyTicket": "Osta pilet",
+        "loading": "Laadin sündmusi...",
+        "error": "Sündmuste laadimine ebaõnnestus. Palun proovige hiljem uuesti.",
+        "pastEvents": "Toimunud sündmused",
+        "videos": {
+            "plato": "Platon: Filosoofia, mis muutis maailma",
+            "consciousness": "Teadvus: teaduse viimane suur mõistatus"
+        },
+        "telegram": "Telegrami kanaliga",
+        "noEvents": "Meie regulaarsed 'klassid' toimuvad kord kahe nädala jooksul. Liituge meie {telegram} värskenduste ja materjalide jaoks või kirjutage {email}."
+    },
+    "footer": {
+        "socialTitle": "Sotsiaalmeedia",
+        "tagline": "Teekond varjudest tõeni",
+        "copyright": "© {year} ACADEMIA PLATONICA MTÜ"
+    }
+}

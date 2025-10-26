@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useT } from "../i18n/t";
 
 export interface EventCardProps {
   title: string;
@@ -11,6 +12,7 @@ export interface EventCardProps {
 const EventCard = (props: EventCardProps) => {
   const { title, starts_at, address, url, image_url } = props;
   const [isExpanded, setIsExpanded] = useState(false);
+  const t = useT();
 
   const handleCardClick = (e: React.MouseEvent) => {
     window.open(url, "_blank", "noopener,noreferrer");
@@ -31,7 +33,7 @@ const EventCard = (props: EventCardProps) => {
         <div className="event-date">{starts_at}</div>
         {address && <div className="event-address">{address}</div>}
       </div>
-      <div className="event-button">{"Купить билет"}</div>
+      <div className="event-button">{t("events.buyTicket")}</div>
     </div>
   );
 };

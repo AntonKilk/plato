@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react";
+import { useT } from "../i18n/t";
 
 export default function CaveIntro() {
   const caveRef = useRef<HTMLDivElement>(null);
+  const t = useT();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -88,7 +90,7 @@ export default function CaveIntro() {
             height="500"
           />
         </div>
-        <p className="subtitle fade-in">Пространство живого мышления</p>
+  <p className="subtitle fade-in">{t("home.tagline")}</p>
       </div>
 
       <div className="shadows-container">
